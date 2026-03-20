@@ -24,6 +24,9 @@ import MarketResearch from "./pages/MarketResearch";
 import Auth from "./pages/Auth";
 import Exports from "./pages/Exports";
 import ScrapeProducts from "./pages/ScrapeProducts";
+import ImportJobList from "./pages/ImportJobList";
+import ImportChemistWarehouse from "./pages/ImportChemistWarehouse";
+import ImportJobDetail from "./pages/ImportJobDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
