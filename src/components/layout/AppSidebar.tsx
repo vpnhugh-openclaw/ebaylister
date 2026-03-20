@@ -13,6 +13,7 @@ import {
   FileDown,
   Sparkles,
   Globe,
+  ShoppingCart,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -46,6 +47,7 @@ const navItems = [
   { title: "Channel Imports", url: "/channel-imports", icon: FileDown },
   { title: "Market Research", url: "/market-research", icon: Sparkles },
   { title: "Scrape Products", url: "/scrape", icon: Globe },
+  { title: "CW Import", url: "/imports", icon: ShoppingCart },
   { title: "Settings", url: "/settings", icon: Settings },
   { title: "Audit Log", url: "/audit", icon: FileText },
 ];

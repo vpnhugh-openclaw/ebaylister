@@ -50,3 +50,6 @@ verify_jwt = false
 
 [functions.bulk-product-upsert]
 verify_jwt = false
+
+[functions.import-resolve]
+verify_jwt = false

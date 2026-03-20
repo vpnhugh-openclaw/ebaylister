@@ -767,6 +767,179 @@ export type Database = {
         }
         Relationships: []
       }
+      import_jobs: {
+        Row: {
+          ambiguous_rows: number
+          completed_at: string | null
+          created_at: string
+          created_by: string
+          error_summary: string | null
+          file_name: string
+          id: string
+          invalid_rows: number
+          matched_rows: number
+          new_rows: number
+          skipped_rows: number
+          source_name: string
+          status: string
+          total_rows: number
+          updated_at: string
+        }
+        Insert: {
+          ambiguous_rows?: number
+          completed_at?: string | null
+          created_at?: string
+          created_by: string
+          error_summary?: string | null
+          file_name: string
+          id?: string
+          invalid_rows?: number
+          matched_rows?: number
+          new_rows?: number
+          skipped_rows?: number
+          source_name?: string
+          status?: string
+          total_rows?: number
+          updated_at?: string
+        }
+        Update: {
+          ambiguous_rows?: number
+          completed_at?: string | null
+          created_at?: string
+          created_by?: string
+          error_summary?: string | null
+          file_name?: string
+          id?: string
+          invalid_rows?: number
+          matched_rows?: number
+          new_rows?: number
+          skipped_rows?: number
+          source_name?: string
+          status?: string
+          total_rows?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      import_rows: {
+        Row: {
+          candidate_matches: Json
+          created_at: string
+          id: string
+          import_job_id: string
+          match_confidence: number | null
+          match_method: string | null
+          match_status: string
+          matched_product_id: string | null
+          normalized_brand: string | null
+          normalized_name: string | null
+          normalized_slug: string | null
+          raw_data: Json
+          resolution_action: string | null
+          resolved_at: string | null
+          row_number: number
+          source_brand: string | null
+          source_category_path: string | null
+          source_currency: string | null
+          source_current_price: number | null
+          source_image_url: string | null
+          source_in_stock: boolean | null
+          source_meta_json: Json | null
+          source_name: string
+          source_name_raw: string | null
+          source_product_id: string | null
+          source_review_count: number | null
+          source_review_rating: number | null
+          source_rrp: number | null
+          source_sku: string | null
+          source_slug: string | null
+          source_updated_at: string | null
+          source_url: string | null
+          updated_at: string
+          validation_errors: Json
+        }
+        Insert: {
+          candidate_matches?: Json
+          created_at?: string
+          id?: string
+          import_job_id: string
+          match_confidence?: number | null
+          match_method?: string | null
+          match_status?: string
+          matched_product_id?: string | null
+          normalized_brand?: string | null
+          normalized_name?: string | null
+          normalized_slug?: string | null
+          raw_data?: Json
+          resolution_action?: string | null
+          resolved_at?: string | null
+          row_number: number
+          source_brand?: string | null
+          source_category_path?: string | null
+          source_currency?: string | null
+          source_current_price?: number | null
+          source_image_url?: string | null
+          source_in_stock?: boolean | null
+          source_meta_json?: Json | null
+          source_name?: string
+          source_name_raw?: string | null
+          source_product_id?: string | null
+          source_review_count?: number | null
+          source_review_rating?: number | null
+          source_rrp?: number | null
+          source_sku?: string | null
+          source_slug?: string | null
+          source_updated_at?: string | null
+          source_url?: string | null
+          updated_at?: string
+          validation_errors?: Json
+        }
+        Update: {
+          candidate_matches?: Json
+          created_at?: string
+          id?: string
+          import_job_id?: string
+          match_confidence?: number | null
+          match_method?: string | null
+          match_status?: string
+          matched_product_id?: string | null
+          normalized_brand?: string | null
+          normalized_name?: string | null
+          normalized_slug?: string | null
+          raw_data?: Json
+          resolution_action?: string | null
+          resolved_at?: string | null
+          row_number?: number
+          source_brand?: string | null
+          source_category_path?: string | null
+          source_currency?: string | null
+          source_current_price?: number | null
+          source_image_url?: string | null
+          source_in_stock?: boolean | null
+          source_meta_json?: Json | null
+          source_name?: string
+          source_name_raw?: string | null
+          source_product_id?: string | null
+          source_review_count?: number | null
+          source_review_rating?: number | null
+          source_rrp?: number | null
+          source_sku?: string | null
+          source_slug?: string | null
+          source_updated_at?: string | null
+          source_url?: string | null
+          updated_at?: string
+          validation_errors?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "import_rows_import_job_id_fkey"
+            columns: ["import_job_id"]
+            isOneToOne: false
+            referencedRelation: "import_jobs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       inventory_snapshots: {
         Row: {
           cost_price: number | null
@@ -1223,6 +1396,89 @@ export type Database = {
             columns: ["research_run_id"]
             isOneToOne: false
             referencedRelation: "market_research_runs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      product_sources: {
+        Row: {
+          created_at: string
+          id: string
+          last_synced_at: string
+          product_id: string
+          source_brand: string | null
+          source_category_path: string | null
+          source_currency: string | null
+          source_current_price: number | null
+          source_image_url: string | null
+          source_in_stock: boolean | null
+          source_meta_json: Json | null
+          source_name: string
+          source_name_raw: string | null
+          source_product_id: string | null
+          source_review_count: number | null
+          source_review_rating: number | null
+          source_rrp: number | null
+          source_sku: string | null
+          source_slug: string | null
+          source_updated_at: string | null
+          source_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          last_synced_at?: string
+          product_id: string
+          source_brand?: string | null
+          source_category_path?: string | null
+          source_currency?: string | null
+          source_current_price?: number | null
+          source_image_url?: string | null
+          source_in_stock?: boolean | null
+          source_meta_json?: Json | null
+          source_name: string
+          source_name_raw?: string | null
+          source_product_id?: string | null
+          source_review_count?: number | null
+          source_review_rating?: number | null
+          source_rrp?: number | null
+          source_sku?: string | null
+          source_slug?: string | null
+          source_updated_at?: string | null
+          source_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_synced_at?: string
+          product_id?: string
+          source_brand?: string | null
+          source_category_path?: string | null
+          source_currency?: string | null
+          source_current_price?: number | null
+          source_image_url?: string | null
+          source_in_stock?: boolean | null
+          source_meta_json?: Json | null
+          source_name?: string
+          source_name_raw?: string | null
+          source_product_id?: string | null
+          source_review_count?: number | null
+          source_review_rating?: number | null
+          source_rrp?: number | null
+          source_sku?: string | null
+          source_slug?: string | null
+          source_updated_at?: string | null
+          source_url?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_sources_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
             referencedColumns: ["id"]
           },
         ]

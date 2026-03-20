@@ -24,6 +24,9 @@ import MarketResearch from "./pages/MarketResearch";
 import Auth from "./pages/Auth";
 import Exports from "./pages/Exports";
 import ScrapeProducts from "./pages/ScrapeProducts";
+import ImportJobList from "./pages/ImportJobList";
+import ImportChemistWarehouse from "./pages/ImportChemistWarehouse";
+import ImportJobDetail from "./pages/ImportJobDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,6 +60,9 @@ const App = () => (
               <Route path="/audit" element={<AuditLog />} />
               <Route path="/market-research" element={<MarketResearch />} />
               <Route path="/scrape" element={<ScrapeProducts />} />
+              <Route path="/imports" element={<ImportJobList />} />
+              <Route path="/imports/chemistwarehouse" element={<ImportChemistWarehouse />} />
+              <Route path="/imports/:jobId" element={<ImportJobDetail />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
