@@ -342,10 +342,15 @@ export default function ImportStock() {
         <TabsList>
           <TabsTrigger value="fos">FOS Stock Report</TabsTrigger>
           <TabsTrigger value="pricebooks">Wholesaler Pricebooks</TabsTrigger>
+          <TabsTrigger value="evelynfaye">Evelyn Faye CSV</TabsTrigger>
         </TabsList>
 
         <TabsContent value="pricebooks">
           <PricebookImportPanel />
+        </TabsContent>
+
+        <TabsContent value="evelynfaye">
+          <EvelynFayeImportTab />
         </TabsContent>
 
         <TabsContent value="fos">
