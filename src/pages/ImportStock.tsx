@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from "react";
 import { PricebookImportPanel } from "@/components/pricebook/PricebookImportPanel";
+import { EvelynFayeImportTab } from "@/components/imports/EvelynFayeImportTab";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
